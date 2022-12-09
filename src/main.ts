@@ -10,9 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!app) throw new Error("app wasn't found in dom")
 
   const sections = gsap.utils.toArray('section')
-  const ground = window.innerHeight - 100
+
   const width = window.innerWidth
   const height = window.innerHeight
+
+  const play = document.querySelector('.arrow')
+
+  // on click on play scroll to the end of the page, after go to the end, stop the scroll
+  play?.addEventListener('click', () => {
+    gsap.to(window, {
+      scrollTo: height * 4,
+      duration: 50,
+      ease: 'none',
+    })
+  })
+
+ 
 
   gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
@@ -28,34 +41,30 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   })
 
-  // sec3 add parallax
+  gsap.to('.bg', {
+    scrollTrigger: {
+      start: "top top",
+      end: height * 5,
+      scrub: .5,
+    },
+    x: - width * 6,
+    ease: 'none',
+  })
 
   gsap.to('.rer', {
     scrollTrigger: {
-      trigger: '.sec1',
-      start: '400px top',
-      
+      start: height * 0.1,
+      end: height * 0.1 + 400,
       scrub: 0.5,
     },
     x: width * 0.3,
     ease: 'none',
   })
 
-  // gsap.to('.rer-info', {
-  //   scrollTrigger: {
-  //     trigger: '.sec1',
-  //     start: 'top top',
-  //     scrub: 0.5,
-  //   },
-  //   x: -width * 0.1,
-  //   ease: 'none',
-  // })
-
   gsap.to('.illu6', {
     scrollTrigger: {
-      // trigger: '.sec1',
-      start: height * 0.7,
-      end: height + 200,
+      start: height * 0.1,
+      end: height * 0.1 + 400,
       scrub: 0.5,
     },
     x: -15,
@@ -64,19 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.transilien', {
     scrollTrigger: {
-      trigger: '.sec1',
-      start: 'top top',
+      start: height * 0.2 + 100,
+      end: height * 0.2 + 400,
       scrub: 0.5,
     },
-    x: width * 0.2,
+    x: width * 0.3 - 55,
     ease: 'none',
   })
 
   gsap.to('.illu2', {
     scrollTrigger: {
-      // trigger: '.sec1',
-      start: height * 0.8,
-      end: height + 250,
+      start: height * 0.2 + 100,
+      end: height * 0.2 + 400,
       scrub: 0.5,
     },
     x: -100,
@@ -85,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.metro', {
     scrollTrigger: {
-      trigger: '.sec1',
-      start: 'top top',
+      start: height * 0.1,
+      end: height * 0.2 + 450,
       scrub: 0.5,
     },
     x: width * 0.4,
@@ -95,9 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu4', {
     scrollTrigger: {
-      // trigger: '.sec1',
-      start: height * 0.7,
-      end: height + 200,
+      start: height * 0.1,
+      end: height * 0.2 + 450,
       scrub: 0.5,
     },
     x: -150,
@@ -106,28 +113,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.bus', {
     scrollTrigger: {
-      start: height * 1.4,
-      end: height * 1.5 + 200,
+      start: height * 1,
+      end: height * 1.4,
       scrub: 0.5,
     },
-    x: width * 0.2 + 70,
+    x: width * 0.2 + 170,
     ease: 'none',
   })
 
   gsap.to('.illu10', {
     scrollTrigger: {
-      start: height * 1.3,
-      end: height * 1.5 + 200,
+      start: height * 1.2,
+      end: height * 1.4,
       scrub: 0.5,
     },
-    x: - 200,
+    x: -200,
     ease: 'none',
   })
 
   gsap.to('.voiture', {
     scrollTrigger: {
-      start: height * 1.5+ 400,
-      end: height * 1.6 + 800,
+      start: height * 1.4,
+      end: height * 1.6,
       scrub: 0.5,
     },
     x: width * 0.2 + 70,
@@ -136,18 +143,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu7', {
     scrollTrigger: {
-      start: height * 1.5+ 500,
-      end: height * 1.6 + 800,
+      start: height * 1.4,
+      end: height * 1.6,
       scrub: 0.5,
     },
-    x: - 250,
+    x: -250,
     ease: 'none',
   })
 
   gsap.to('.tramway', {
     scrollTrigger: {
-      start: height * 2.3,
-      end: height * 2.7,
+      start: height * 1.5,
+      end: height * 2,
       scrub: 0.5,
     },
     x: width * 0.6,
@@ -156,8 +163,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu11', {
     scrollTrigger: {
-      start: height * 2.3,
-      end: height * 3,
+      start: height * 1.5,
+      end: height * 2,
       scrub: 0.5,
     },
     x: -100,
@@ -166,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.velo', {
     scrollTrigger: {
-      start: height * 3,
-      end: height * 3.5,
+      start: height * 2,
+      end: height * 2.2,
       scrub: 0.5,
     },
     x: 400,
@@ -176,28 +183,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu14', {
     scrollTrigger: {
-      start: height * 3,
-      end: height * 3.5,
+      start: height * 2,
+      end: height * 2.2,
       scrub: 0.5,
     },
     x: -100,
     ease: 'none',
   })
 
-  gsap.to('.velo', {
-    scrollTrigger: {
-      start: height * 3,
-      end: height * 3.5,
-      scrub: 0.5,
-    },
-    x: 400,
-    ease: 'none',
-  })
-
   gsap.to('.marche', {
     scrollTrigger: {
-      start: height * 3.3,
-      end: height * 3.8,
+      start: height * 2.2,
+      end: height * 2.3,
       scrub: 0.5,
     },
     x: 150,
@@ -206,8 +203,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu15', {
     scrollTrigger: {
-      start: height * 3.3,
-      end: height * 3.8,
+      start: height * 2.2,
+      end: height * 2.3,
       scrub: 0.5,
     },
     x: -100,
@@ -216,30 +213,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
   gsap.to('.illu16', {
     scrollTrigger: {
-      start: height * 3.3,
-      end: height * 3.8,
+      start: height * 2.2,
+      end: height * 2.3,
       scrub: 0.5,
     },
-    x: -400,
+    x: -300,
     ease: 'none',
   })
 
   gsap.to('.t11', {
     scrollTrigger: {
-      start: height * 3.3,
-      end: height * 3.8,
+      start: height * 2.8,
+      end: height * 3,
+      scrub: 0.5,
+    },
+    x: 200,
+    ease: 'none',
+  })
+  gsap.to('.b11', {
+    scrollTrigger: {
+      start: height * 2.8,
+      end: height * 3,
       scrub: 0.5,
     },
     x: 400,
     ease: 'none',
   })
-  gsap.to('.b11', {
+
+  gsap.to('.t12', {
     scrollTrigger: {
-      start: height * 3.3,
-      end: height * 3.8,
+      start: height * 2.8,
+      end: height * 3,
+      scrub: 0.5,
+    },
+    x: 400,
+    ease: 'none',
+  })
+
+  gsap.to('.midle-container', {
+    scrollTrigger: {
+      start: height * 2.3,
+      end: height * 2.8,
+      scrub: 0.5,
+    },
+    x: "20%",
+    ease: 'none',
+  })
+
+  gsap.to('.b12', {
+    scrollTrigger: {
+      start: height * 2.8,
+      end: height * 3,
       scrub: 0.5,
     },
     x: 800,
+    ease: 'none',
+  })
+
+  gsap.to('.t23', {
+    scrollTrigger: {
+      start: height * 2.8,
+      end: height * 3,
+      scrub: 0.5,
+    },
+    x: 300,
+    ease: 'none',
+  })
+
+  gsap.to('.illu19', {
+    scrollTrigger: {
+      start: height * 3.3,
+      // end: height * 4,
+      scrub: 0.5,
+    },
+    x: -100,
+    ease: 'none',
+  })
+
+  gsap.to('.illu20', {
+    scrollTrigger: {
+      start: height * 3.3,
+      // end: height * 4,
+      scrub: 0.5,
+    },
+    x: -200,
     ease: 'none',
   })
 })
