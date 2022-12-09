@@ -1,0 +1,338 @@
+@font-face {
+  font-family: Futura_Condensed_Extra_Bold;
+  src: url(./assets/fonts/Futura_Condensed_Extra_Bold.otf);
+}
+
+@font-face {
+  font-family: Futura_Medium_Italic;
+  src: url(./assets/fonts/Futura_Medium_Italic.otf);
+}
+
+@font-face {
+  font-family: Futura-Bold_Regular;
+  src: url(./assets/fonts/Futura-Bold_Regular.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(./assets/images/bg.png);
+  overscroll-behavior: none;
+  height: 100vh;
+  overflow-x: hidden;
+
+  #app {
+    overscroll-behavior: none;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+
+    section {
+      width: 100%;
+      height: 100%;
+
+      h2 {
+        font-family: 'Futura_Condensed_Extra_Bold', sans-serif;
+        font-size: 30px;
+        margin-top: 50px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-family: 'Futura_Medium_Italic', sans-serif;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-top: 0;
+      }
+
+      .info {
+        font-size: 150px;
+        font-family: Futura_Medium_Italic;
+        font-style: italic;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+
+        p {
+          margin-top: 50px;
+          z-index: 10;
+          filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.25));
+        }
+
+        .illu1 {
+          position: absolute;
+          width: 250px;
+        }
+        .illu2 {
+          width: 200px;
+          margin-left: 100px;
+        }
+
+        .illu3 {
+          position: absolute;
+          width: 300px;
+        }
+
+        .illu4 {
+          width: 300px;
+          margin-left: 150px;
+        }
+
+        .illu5 {
+          position: absolute;
+          width: 300px;
+        }
+        .illu6 {
+          width: 210px;
+          margin-left: 100px;
+          margin-top: 30px;
+        }
+
+        .illu7 {
+          position: absolute;
+          width: 500px;
+        }
+        .illu8 {
+          width: 300px;
+          margin-left: -100px;
+          margin-top: 30px;
+          z-index: 100;
+        }
+
+        .illu9 {
+          // position: absolute;
+          width: 300px;
+          margin-left: -40%;
+          margin-bottom: 20%;
+          z-index: -1;
+        }
+        .illu10 {
+          width: 210px;
+          margin-left: 100px;
+          margin-top: 30px;
+        }
+
+        .illu11 {
+          position: absolute;
+          width: 300px;
+        }
+        .illu12 {
+          width: 210px;
+          // margin-left: 100px;
+          margin-top: 30px;
+        }
+
+        .illu13 {
+          position: absolute;
+          width: 200px;
+          top: 0;
+          z-index: -1;
+        }
+        .illu14 {
+          position: absolute;
+          bottom: 8px;
+          width: 250px;
+          margin-left: 120px;
+          z-index: 12;
+        }
+      }
+
+      &.sec1 {
+        .metro-container {
+          height: 25%;
+          position: absolute;
+          bottom: 0;
+          left: 60%;
+          display: flex;
+
+          .metro {
+            height: 100%;
+          }
+
+          .metro-info {
+            margin-left: 300px;
+            color: #2ca2a2;
+            bottom: 0;
+          }
+        }
+      }
+
+      &.sec2 {
+        .rer-container {
+          height: 25%;
+          display: flex;
+          margin-bottom: 2%;
+          .rer {
+            margin-left: -30%;
+            height: 100%;
+          }
+          .rer-info {
+            color: #5fd7c9;
+            bottom: 400;
+          }
+        }
+
+        .transilien-container {
+          height: 25%;
+          display: flex;
+
+          .transilien {
+            margin-left: -20%;
+            height: 100%;
+          }
+          .transilien-info {
+            color: #f9337c;
+            bottom: 200;
+          }
+        }
+      }
+
+      &.sec3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .tramway-container {
+          height: 25%;
+          display: flex;
+          .tramway {
+            margin-left: 30%;
+            height: 100%;
+          }
+          .tramway-info {
+            margin-top: 90px;
+            color: #01bebf;
+            bottom: 400;
+
+            p {
+              margin-top: -50px;
+            }
+          }
+        }
+
+        .bus-container {
+          height: 25%;
+          display: flex;
+          .bus {
+            // margin-left: 50.5%;
+            height: 100%;
+            z-index: 10;
+          }
+          .bus-info {
+            color: #32d8c1;
+            bottom: 400;
+          }
+        }
+
+        .voiture-container {
+          height: 25%;
+          display: flex;
+
+          .voiture {
+            margin-left: 50%;
+            height: 100%;
+            z-index: -1;
+          }
+          .voiture-info {
+            color: #5fbc53;
+            bottom: 200;
+          }
+        }
+      }
+
+      &.sec4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .marche-container {
+          height: 25%;
+          display: flex;
+
+          .marche {
+            margin-left: -10%;
+            height: 100%;
+            z-index: -1;
+          }
+          .marche-info {
+            color: #b3d832;
+            bottom: 200;
+          }
+        }
+
+        .velo-container {
+          height: 25%;
+          display: flex;
+          position: relative;
+          margin-left: -40%;
+
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 1040px;
+            height: 8px;
+            background-color: #e84e0e;
+            color: rebeccapurple;
+            bottom: 0;
+            left: 0;
+          }
+          
+          .velo {
+            height: 100%;
+            z-index: -1;
+          }
+          .velo-info {
+            color: #e84e0e;
+            bottom: 200;
+          }
+        }
+      }
+
+      &.sec5 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .scroll-container {
+          // height: 25%;
+          display: flex;
+          position: relative;
+          width: 100%;
+          margin-left: -50%;
+
+          img{
+            position: absolute;
+            bottom: 0;
+
+            &:nth-child(1){
+              left: 0%;
+            }
+            &:nth-child(2){
+              left: 5%;
+            }
+            &:nth-child(3){
+              left: 10%;
+            }
+          }
+
+        }
+
+        .velo-container {
+          height: 25%;
+          display: flex;
+         
+          .velo {
+            height: 100%;
+            z-index: -1;
+          }
+          .velo-info {
+            color: white;
+            bottom: 200;
+          }
+        }
+      }
+    }
+  }
+}
