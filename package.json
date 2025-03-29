@@ -2,7 +2,7 @@
   "name": "starter-kit",
   "version": "1.0.1",
   "description": "a minimalist starter kit",
-  "main": "src/app.js",
+  "main": "src/index.html",
   "engines": {
     "node": ">=20.0.0"
   },
